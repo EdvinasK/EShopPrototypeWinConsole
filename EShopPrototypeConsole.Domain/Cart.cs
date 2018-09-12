@@ -13,6 +13,7 @@ namespace EShopPrototypeConsole.Domain
             Products = new List<Product>();
         }
 
+        public int Discount { get; set; }
         public List<Product> Products { get; set; }
 
         /// <summary>

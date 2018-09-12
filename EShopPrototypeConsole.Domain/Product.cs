@@ -34,6 +34,7 @@ namespace EShopPrototypeConsole.Domain
         public string Name { get; set; } = "Default";
         public decimal Cost { get; set; }
         public string Currency { get; set; } = "Eur";
+        public int Discount { get; set; }
 
 
         /// <summary>
