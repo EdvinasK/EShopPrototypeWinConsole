@@ -8,10 +8,12 @@ namespace EShopPrototypeConsole.Domain
 {
     public class Cart
     {
+        #region Constructor Region
         public Cart()
         {
             Products = new List<Product>();
         }
+        #endregion
 
         public int Discount { get; set; }
         public List<Product> Products { get; set; }
@@ -41,6 +43,18 @@ namespace EShopPrototypeConsole.Domain
         public void DisplayCart()
         {
             Products.ForEach(p => Console.WriteLine($"{p.Name}: {p.Cost} {p.Currency}"));
+        }
+
+        /// <summary>
+        /// Calculates discounted total cost for the cart
+        /// </summary>
+        /// <param name="discount">Integer discount for the purchase cart/bag</param>
+        /// <returns>Discounted total cost</returns>
+        public decimal CalculateDiscount(int discount)
+        {
+            var total = CalculateTotal();
+
+            return total - (total * discount / 100);
         }
 
         /// <summary>

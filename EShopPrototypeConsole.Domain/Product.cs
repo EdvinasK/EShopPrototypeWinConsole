@@ -8,6 +8,7 @@ namespace EShopPrototypeConsole.Domain
 {
     public class Product
     {
+        #region Constructor Region
         /// <summary>
         /// Create a product with default name and specified cost.
         /// </summary>
@@ -29,6 +30,7 @@ namespace EShopPrototypeConsole.Domain
             Name = name;
             Cost = cost;
         }
+        #endregion
 
         public int Id { get; set; } = 0;
         public string Name { get; set; } = "Default";
@@ -43,6 +45,15 @@ namespace EShopPrototypeConsole.Domain
         public void DisplayProduct()
         {
             Console.WriteLine($"{Name}: {Cost}");
+        }
+
+        /// <summary>
+        /// Calculates discounted price for a product
+        /// </summary>
+        /// <returns>Discounted price</returns>
+        public decimal CalculateDiscount()
+        {
+            return Cost - (Cost * Discount / 100);
         }
     }
 }
