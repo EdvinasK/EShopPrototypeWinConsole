@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopPrototypeConsole", "ES
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopPrototypeConsole.Domain", "EShopPrototypeConsole.Domain\EShopPrototypeConsole.Domain.csproj", "{973458F0-07F9-47D4-8F7B-CD2014B03FA4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{A0BE1818-3A8E-45B7-8478-F420127AACCD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -1,0 +1,2 @@
+﻿For summarizing methods: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/xmldoc/xml-documentation-comments
+Additional C# documentation ways: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/

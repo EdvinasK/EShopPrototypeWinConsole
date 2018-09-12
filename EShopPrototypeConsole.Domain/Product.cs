@@ -33,5 +33,15 @@ namespace EShopPrototypeConsole.Domain
         public int Id { get; set; } = 0;
         public string Name { get; set; } = "Default";
         public decimal Cost { get; set; }
+        public string Currency { get; set; } = "Eur";
+
+
+        /// <summary>
+        /// Displays product name and cost
+        /// </summary>
+        public void DisplayProduct()
+        {
+            Console.WriteLine($"{Name}: {Cost}");
+        }
     }
 }
