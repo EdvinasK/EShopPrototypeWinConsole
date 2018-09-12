@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EShopPrototypeConsole.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace EShopPrototypeConsole
     {
         static void Main(string[] args)
         {
+            var product1 = new Product("TestProduct", 99.99m);
+
             Console.WriteLine("Hello world!");
             Console.ReadLine();
         }
