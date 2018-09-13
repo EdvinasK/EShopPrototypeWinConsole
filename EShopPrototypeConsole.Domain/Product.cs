@@ -80,5 +80,16 @@ namespace EShopPrototypeConsole.Domain
 
             return name;
         }
+
+        /// <summary>
+        /// Method used to return a trimed product name
+        /// </summary>
+        /// <returns>Returns a trimed product name</returns>
+        public string GetProductName()
+        {
+            var name = Name.Trim();
+
+            return name;
+        }
     }
 }
