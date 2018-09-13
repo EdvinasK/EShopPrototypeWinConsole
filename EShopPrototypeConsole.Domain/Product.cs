@@ -25,10 +25,9 @@ namespace EShopPrototypeConsole.Domain
         /// <param name="name">Name or the title of the product ex: "Samsung S8"</param>
         /// <param name="cost">The cost or the price of the product ex: 99.99m</param>
         /// <returns>Returns a new product with specified cost and name</returns>
-        public Product(string name, decimal cost)
+        public Product(string name, decimal cost) : this(cost)
         {
             Name = name;
-            Cost = cost;
         }
         #endregion
 
@@ -54,6 +53,17 @@ namespace EShopPrototypeConsole.Domain
         public decimal CalculateDiscount()
         {
             return Cost - (Cost * Discount / 100);
+        }
+
+        /// <summary>
+        /// Method used to return a trimed product name
+        /// </summary>
+        /// <returns>Returns a trimed product name</returns>
+        public string GetProductName()
+        {
+            var name = Name.Trim();
+
+            return name;
         }
     }
 }
