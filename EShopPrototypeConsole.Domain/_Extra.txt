@@ -1,3 +1,6 @@
 ﻿For summarizing methods: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/xmldoc/xml-documentation-comments
 Additional C# documentation ways: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/
 Namespace best practices: Naming convention <company>.<technology>.<feature>
+More info on singleton and other patterns: 
+	https://app.pluralsight.com/library/courses/design-patterns-on-ramp/table-of-contents - begginer
+	https://app.pluralsight.com/library/courses/patterns-library/table-of-contents - intermediate

@@ -52,7 +52,9 @@ namespace EShopPrototypeConsole.Domain
         /// <returns>Discounted price</returns>
         public decimal CalculateDiscount()
         {
-            return Cost - (Cost * Discount / 100);
+            var discount = (Discount < 0) ? 0 : Discount;
+
+            return Cost - (Cost * discount / 100);
         }
 
         /// <summary>

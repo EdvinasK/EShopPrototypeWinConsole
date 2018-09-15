@@ -39,5 +39,23 @@ namespace EShopPrototypeConsole.DomainTests
             // Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void CalculateDiscount_NegativeDiscount_Success()
+        {
+            // Arrange
+            var product = new Product("TestProduct", 10m)
+            {
+                Discount = -50
+            };
+
+            var expected = 10m;
+
+            // Act
+            var actual = product.CalculateDiscount();
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
