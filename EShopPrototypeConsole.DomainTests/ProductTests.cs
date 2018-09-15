@@ -57,5 +57,36 @@ namespace EShopPrototypeConsole.DomainTests
             // Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void GetProviderInfo_NullProvider_Success()
+        {
+            // Arrange
+            var product = new Product("TestProduct", 10m);
+
+            string expected = null;
+
+            // Act
+            var actual = product.GetProviderInfo();
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void GetProviderInfo_NamedProvider_Success()
+        {
+            // Arrange
+            var product = new Product("TestProduct", 10m);
+            product.Provider.Name = "Samsong";
+
+            var expected = "Samsong";
+
+            // Act
+            var actual = product.GetProviderInfo();
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

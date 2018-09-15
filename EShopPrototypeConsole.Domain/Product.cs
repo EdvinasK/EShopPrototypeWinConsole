@@ -17,6 +17,7 @@ namespace EShopPrototypeConsole.Domain
         public Product(decimal cost)
         {
             Cost = cost;
+            Provider = new Provider();
         }
 
         /// <summary>
@@ -35,6 +36,7 @@ namespace EShopPrototypeConsole.Domain
         public string Name { get; set; } = "Default";
         public decimal Cost { get; set; }
         public string Currency { get; set; } = "Eur";
+        public Provider Provider { get; set; }
         public int Discount { get; set; }
 
 
@@ -64,6 +66,17 @@ namespace EShopPrototypeConsole.Domain
         public string GetProductName()
         {
             var name = Name.Trim();
+
+            return name;
+        }
+
+        /// <summary>
+        /// Method used to return a trimed product name
+        /// </summary>
+        /// <returns>Returns a trimed product name</returns>
+        public string GetProviderInfo()
+        {
+            var name = Provider?.Name;
 
             return name;
         }
