@@ -18,6 +18,7 @@ namespace EShopPrototypeConsole.Domain
         {
             Cost = cost;
             Provider = new Provider();
+            ProductExtra = new ProductExtra();
         }
 
         /// <summary>
@@ -32,11 +33,12 @@ namespace EShopPrototypeConsole.Domain
         }
         #endregion
 
-        public int Id { get; set; } = 0;
-        public string Name { get; set; } = "Default";
+        public int Id { get; set; }
+        public string Name { get; set; }
         public decimal Cost { get; set; }
         public string Currency { get; set; } = "Eur";
         public Provider Provider { get; set; }
+        public ProductExtra ProductExtra { get; set; }
         public int Discount { get; set; }
 
 
