@@ -88,5 +88,57 @@ namespace EShopPrototypeConsole.DomainTests
             // Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void CalculateProductVatCost_VatProvided_Success()
+        {
+            // Arrange
+            var product = new Product("TestProduct", 10m)
+            {
+                Vat = 21
+            };
+
+            var expected = 2.1m;
+
+            // Act
+            var actual = product.CalculateProductVatCost();
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CalculateProductVatCost_NoVatProvided_Success()
+        {
+            // Arrange
+            var product = new Product("TestProduct", 10m);
+
+            var expected = 0;
+
+            // Act
+            var actual = product.CalculateProductVatCost();
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CalculateTotalProductCost_DiscountVatProvided_Success()
+        {
+            // Arrange
+            var product = new Product("TestProduct", 10m)
+            {
+                Discount = 10,
+                Vat = 21
+            };
+
+            var expected = 10.89m;
+
+            // Act
+            var actual = product.CalculateTotalProductCost();
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

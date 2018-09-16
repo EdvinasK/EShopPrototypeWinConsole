@@ -37,6 +37,7 @@ namespace EShopPrototypeConsole.Domain
         public string Name { get; set; }
         public decimal Cost { get; set; }
         public string Currency { get; set; } = "Eur";
+        public int Vat { get; set; }
         public Provider Provider { get; set; }
         public ProductExtra ProductExtra { get; set; }
         public int Discount { get; set; }
@@ -51,6 +52,15 @@ namespace EShopPrototypeConsole.Domain
         }
 
         /// <summary>
+        /// Calculates product vat(value added tax) cost
+        /// </summary>
+        /// <returns>Returns products vat cost ex: 100*21%</returns>
+        public decimal CalculateProductVatCost()
+        {
+            return CalculateDiscount() * Vat / 100;
+        }
+
+        /// <summary>
         /// Calculates discounted price for a product
         /// </summary>
         /// <returns>Discounted price</returns>
@@ -59,6 +69,15 @@ namespace EShopPrototypeConsole.Domain
             var discount = (Discount < 0) ? 0 : Discount;
 
             return Cost - (Cost * discount / 100);
+        }
+
+        /// <summary>
+        /// Calculates total product cost including discount and vat
+        /// </summary>
+        /// <returns>Returns price-discount*vat</returns>
+        public decimal CalculateTotalProductCost()
+        {
+            return CalculateDiscount() + CalculateProductVatCost();
         }
 
         /// <summary>
