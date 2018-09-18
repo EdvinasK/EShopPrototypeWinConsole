@@ -50,11 +50,11 @@ namespace EShopPrototypeConsole.Domain
         /// </summary>
         /// <param name="discount">Integer discount for the purchase cart/bag</param>
         /// <returns>Discounted total cost</returns>
-        public decimal CalculateDiscount(int discount)
+        public decimal CalculateTotalWithDiscount()
         {
             var total = CalculateTotal();
 
-            return total - (total * discount / 100);
+            return total - (total * Discount / 100);
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace EShopPrototypeConsole.Domain
         {
             var total = 0m;
 
-            Products.ForEach(p => total += p.Cost);
+            Products.ForEach(p => total += p.CalculateTotalProductCost());
 
             return total;
         }

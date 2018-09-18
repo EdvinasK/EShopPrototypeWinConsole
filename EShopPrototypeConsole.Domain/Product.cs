@@ -92,9 +92,9 @@ namespace EShopPrototypeConsole.Domain
         }
 
         /// <summary>
-        /// Method used to return a trimed product name
+        /// Method used to return provider information
         /// </summary>
-        /// <returns>Returns a trimed product name</returns>
+        /// <returns>Returns provider information</returns>
         public string GetProviderInfo()
         {
             var name = Provider?.Name;
