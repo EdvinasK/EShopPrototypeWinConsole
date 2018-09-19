@@ -39,6 +39,7 @@ namespace EShopPrototypeConsole.Domain
         public string Currency { get; set; } = "Eur";
         public int Vat { get; set; }
         public Provider Provider { get; set; }
+        public ProductCategory Category { get; set; }
         public ProductExtra ProductExtra { get; set; }
         public int Discount { get; set; }
 

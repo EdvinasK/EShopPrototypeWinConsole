@@ -6,17 +6,30 @@ using System.Threading.Tasks;
 
 namespace EShopPrototypeConsole.Domain
 {
-    public class Provider
+    public class ProductCategory
     {
         #region Constructors
-        public Provider()
+        public ProductCategory()
         {
             Products = new List<Product>();
         }
+
         #endregion
+
+        #region Fields and properties
 
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
         public IEnumerable<Product> Products { get; set; }
+
+        #endregion
+
+        #region Methods
+        public List<Product> GetAllRequestedCategoryProducts()
+        {
+            return Products.ToList();
+        }
+        #endregion
     }
 }
