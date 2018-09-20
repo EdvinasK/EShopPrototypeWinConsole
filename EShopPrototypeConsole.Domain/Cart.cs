@@ -15,6 +15,7 @@ namespace EShopPrototypeConsole.Domain
         }
         #endregion
 
+        public int Id { get; set; }
         public int Discount { get; set; }
         public List<Product> Products { get; set; }
 

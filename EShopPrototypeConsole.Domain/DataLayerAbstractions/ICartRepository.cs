@@ -8,6 +8,7 @@ namespace EShopPrototypeConsole.Domain.DataLayerAbstractions
 {
     public interface ICartRepository
     {
-        
+        int GetCartProductCount(int CartId);
+        List<Product> GetAllCartProducts(int CartId);
     }
 }
