@@ -41,10 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cart.cs" />
-    <Compile Include="Catalog.cs" />
+    <Compile Include="Country.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductCategory.cs" />
     <Compile Include="ProductExtra.cs" />
+    <Compile Include="ProductUnavailableCountry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider.cs" />
   </ItemGroup>

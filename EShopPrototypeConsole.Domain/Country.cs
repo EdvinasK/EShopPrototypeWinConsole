@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace EShopPrototypeConsole.Domain
 {
-    public class Catalog
+    public class Country
     {
         public int Id { get; set; }
-        public IEnumerable<ProductCategory> ProductCategories { get; set; }
+        public string Name { get; set; }
     }
 }
