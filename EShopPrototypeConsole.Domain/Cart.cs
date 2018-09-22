@@ -23,9 +23,20 @@ namespace EShopPrototypeConsole.Domain
         /// Add a new product to the cart
         /// </summary>
         /// <param name="product">Product object to add to Cart list</param>
-        public void AddProduct(Product product)
+        public string AddProduct(Product product)
         {
-            Products.Add(product);
+            if (product.IsProductAvailable)
+            {
+                Products.Add(product);
+                product.ProductExtra.Quantity--;
+            }
+            else
+            {
+                return "Product out of stock";
+            }
+                
+            return "Product was added succesfuly";
+
         }
 
         /// <summary>

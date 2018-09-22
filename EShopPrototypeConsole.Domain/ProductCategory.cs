@@ -23,6 +23,15 @@ namespace EShopPrototypeConsole.Domain
         public string Description { get; set; }
         public IEnumerable<Product> Products { get; set; }
 
+        public string FullDescription => $"{Name} - {Description}";
+        //public string FullDescription
+        //{
+        //    get
+        //    {
+        //        return $"{Name} - {Description}";
+        //    }
+        //}
+
         #endregion
 
         #region Methods

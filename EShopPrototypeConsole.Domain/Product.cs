@@ -38,11 +38,18 @@ namespace EShopPrototypeConsole.Domain
         public decimal Cost { get; set; }
         public string Currency { get; set; } = "Eur";
         public int Vat { get; set; }
+        public int ProviderId { get; set; }
         public Provider Provider { get; set; }
+        public int CategoryId { get; set; }
         public ProductCategory Category { get; set; }
+        public int ProductExtraId { get; set; }
         public ProductExtra ProductExtra { get; set; }
+        public int Code { get; set; }
         public int Discount { get; set; }
 
+        public bool IsProductAvailable => ProductExtra.Quantity > 0;
+
+        public string FullCode => Category.Name + Code.ToString();
 
         /// <summary>
         /// Displays product name and cost
@@ -51,6 +58,8 @@ namespace EShopPrototypeConsole.Domain
         {
             Console.WriteLine($"{Name}: {Cost}");
         }
+
+        
 
         /// <summary>
         /// Calculates product vat(value added tax) cost

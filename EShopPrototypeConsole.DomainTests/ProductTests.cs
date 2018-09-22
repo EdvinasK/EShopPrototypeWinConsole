@@ -140,5 +140,50 @@ namespace EShopPrototypeConsole.DomainTests
             // Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void IsProductAvailable_EmptyStock_Success()
+        {
+            // Arrange
+            var cart = new Cart();
+            var product = new Product("TestProduct", 10m);
+            var productExtra = new ProductExtra(product)
+            {
+                Quantity = 0
+            };
+            product.ProductExtra = productExtra;
+
+            var expected = "Product out of stock";
+
+            // Act
+            var actual = cart.AddProduct(product); ;
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void IsProductAvailable_LimitedStock_Success()
+        {
+            // Arrange
+            var cart = new Cart();
+            var product1 = new Product("Test1Product", 10m);
+            var product2 = new Product("Test2Product", 10m);
+            var productExtra = new ProductExtra(product1)
+            {
+                Quantity = 1
+            };
+            product1.ProductExtra = productExtra;
+            product2.ProductExtra = productExtra;
+
+            var expected = "Product out of stock";
+            cart.AddProduct(product1);
+
+            // Act
+            var actual = cart.AddProduct(product2); ;
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
