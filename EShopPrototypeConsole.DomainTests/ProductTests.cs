@@ -156,7 +156,7 @@ namespace EShopPrototypeConsole.DomainTests
             var expected = "Product out of stock";
 
             // Act
-            var actual = cart.AddProduct(product); ;
+            var actual = cart.AddProduct(product).Message; ;
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -180,7 +180,7 @@ namespace EShopPrototypeConsole.DomainTests
             cart.AddProduct(product1);
 
             // Act
-            var actual = cart.AddProduct(product2); ;
+            var actual = cart.AddProduct(product2).Message; ;
 
             // Assert
             Assert.AreEqual(expected, actual);

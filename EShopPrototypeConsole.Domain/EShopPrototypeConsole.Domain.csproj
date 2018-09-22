@@ -44,6 +44,7 @@
     <Compile Include="Country.cs" />
     <Compile Include="DataLayerAbstractions\ICartRepository.cs" />
     <Compile Include="DataLayerAbstractions\IProductRepository.cs" />
+    <Compile Include="Helpers\OperationResult.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductCategory.cs" />
     <Compile Include="ProductExtra.cs" />

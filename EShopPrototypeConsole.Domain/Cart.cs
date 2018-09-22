@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EShopPrototypeConsole.Domain.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,19 +24,9 @@ namespace EShopPrototypeConsole.Domain
         /// Add a new product to the cart
         /// </summary>
         /// <param name="product">Product object to add to Cart list</param>
-        public string AddProduct(Product product)
+        public OperationResult AddProduct(Product product)
         {
-            if (product.IsProductAvailable)
-            {
-                Products.Add(product);
-                product.ProductExtra.Quantity--;
-            }
-            else
-            {
-                return "Product out of stock";
-            }
-                
-            return "Product was added succesfuly";
+            return AddProduct(product, 0, null);
 
         }
 
@@ -43,8 +34,27 @@ namespace EShopPrototypeConsole.Domain
         /// Add a number of new products to the cart
         /// </summary>
         /// <param name="product">Product object to add to Cart list</param>
-        public string AddProduct(Product product, int quantity)
+        /// <param name="quantity">Quantity of the product to order</param>
+        public OperationResult AddProduct(Product product, int quantity)
         {
+            return AddProduct(product, quantity, null);
+
+        }
+
+
+        /// <summary>
+        /// Add a number of new products to the cart with a delivery date
+        /// </summary>
+        /// <param name="product">Product object to add to Cart list</param>
+        /// <param name="quantity">Quantity of the product to order</param>
+        /// <param name="deliverBy">Requested delivery date</param>
+        public OperationResult AddProduct(Product product, int quantity, DateTimeOffset? deliverBy)
+        {
+            // Guard clause
+            if (product == null) throw new ArgumentNullException(nameof(product));
+            if (quantity <= 0) throw new ArgumentOutOfRangeException(nameof(quantity));
+            if (deliverBy <= DateTimeOffset.Now) throw new ArgumentOutOfRangeException(nameof(deliverBy));
+
             if (product.IsProductAvailable)
             {
                 Products.Add(product);
@@ -52,10 +62,10 @@ namespace EShopPrototypeConsole.Domain
             }
             else
             {
-                return "Product out of stock";
+                return new OperationResult(false, "Product out of stock");
             }
 
-            return "Product was added succesfuly";
+            return new OperationResult(true, "Product was added succesfuly");
 
         }
 

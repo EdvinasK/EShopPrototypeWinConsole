@@ -94,5 +94,15 @@ namespace EShopPrototypeConsole.DomainTests
             // Assert
             Assert.AreEqual(expected, actual);
         }
+
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void AddProduct_NullException_Failure()
+        {
+            var cart = new Cart();
+
+            cart.AddProduct((Product)null);
+        }
     }
 }
