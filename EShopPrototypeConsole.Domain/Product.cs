@@ -34,10 +34,11 @@ namespace EShopPrototypeConsole.Domain
         #endregion
 
         public int Id { get; set; }
-        public string Name { get; set; }
+        internal string Name { get; set; }
         public decimal Cost { get; set; }
         public string Currency { get; set; } = "Eur";
         public int Vat { get; set; }
+        public int Quantity { get; set; }
         public int ProviderId { get; set; }
         public Provider Provider { get; set; }
         public int CategoryId { get; set; }

@@ -56,6 +56,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EShopPrototypeConsole.Data\EShopPrototypeConsole.Data.csproj">
+      <Project>{c8728344-757c-4104-9a4c-888cb361d945}</Project>
+      <Name>EShopPrototypeConsole.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EShopPrototypeConsole.Domain\EShopPrototypeConsole.Domain.csproj">
       <Project>{973458f0-07f9-47d4-8f7b-cd2014b03fa4}</Project>
       <Name>EShopPrototypeConsole.Domain</Name>
