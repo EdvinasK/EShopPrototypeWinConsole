@@ -117,9 +117,6 @@ namespace EShopPrototypeConsole.Domain
         /// Overriden so when debugging near object it would show "Name Id" instead of project.className
         /// </summary>
         /// <returns></returns>
-        public override string ToString()
-        {
-            return $"{Name} ({Id}";
-        }
+        public override string ToString() => $"{Name} ({Id})";
     }
 }

@@ -20,13 +20,15 @@ namespace EShopPrototypeConsole.Domain
         public int Discount { get; set; }
         public List<Product> Products { get; set; }
 
+        public enum IncludeDiscount { Included, Excluded };
+
         /// <summary>
         /// Add a new product to the cart
         /// </summary>
         /// <param name="product">Product object to add to Cart list</param>
         public OperationResult AddProduct(Product product)
         {
-            return AddProduct(product, 1, null);
+            return AddProduct(product, 1, null, IncludeDiscount.Included);
 
         }
 
@@ -37,7 +39,7 @@ namespace EShopPrototypeConsole.Domain
         /// <param name="quantity">Quantity of the product to order</param>
         public OperationResult AddProduct(Product product, int quantity)
         {
-            return AddProduct(product, quantity, null);
+            return AddProduct(product, quantity, null, IncludeDiscount.Included);
 
         }
 
@@ -49,6 +51,19 @@ namespace EShopPrototypeConsole.Domain
         /// <param name="quantity">Quantity of the product to order</param>
         /// <param name="deliverBy">Requested delivery date</param>
         public OperationResult AddProduct(Product product, int quantity, DateTimeOffset? deliverBy)
+        {
+            return AddProduct(product, quantity, deliverBy, IncludeDiscount.Included);
+        }
+
+        /// <summary>
+        /// Add a number of new products to the cart with a delivery date
+        /// </summary>
+        /// <param name="product">Product object to add to Cart list</param>
+        /// <param name="quantity">Quantity of the product to order</param>
+        /// <param name="deliverBy">Requested delivery date</param>
+        /// <param name="includeDiscount">Should product have discount included</param>
+        public OperationResult AddProduct(Product product, int quantity, DateTimeOffset? deliverBy, 
+                                            IncludeDiscount includeDiscount)
         {
             // Guard clause
             if (product == null) throw new ArgumentNullException(nameof(product));
