@@ -26,7 +26,7 @@ namespace EShopPrototypeConsole.Domain
         /// <param name="product">Product object to add to Cart list</param>
         public OperationResult AddProduct(Product product)
         {
-            return AddProduct(product, 0, null);
+            return AddProduct(product, 1, null);
 
         }
 

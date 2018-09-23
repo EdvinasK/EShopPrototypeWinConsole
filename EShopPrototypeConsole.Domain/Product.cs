@@ -34,7 +34,7 @@ namespace EShopPrototypeConsole.Domain
         #endregion
 
         public int Id { get; set; }
-        internal string Name { get; set; }
+        public string Name { get; set; }
         public decimal Cost { get; set; }
         public string Currency { get; set; } = "Eur";
         public int Vat { get; set; }
@@ -111,6 +111,15 @@ namespace EShopPrototypeConsole.Domain
             var name = Provider?.Name;
 
             return name;
+        }
+
+        /// <summary>
+        /// Overriden so when debugging near object it would show "Name Id" instead of project.className
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"{Name} ({Id}";
         }
     }
 }
