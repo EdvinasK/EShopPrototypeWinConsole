@@ -27,6 +27,7 @@ namespace EShopPrototypeConsole.Domain
 
         public int Id { get; set; }
         public ICollection<Product> Products { get; set; }
+        public string MadeIn { get; set; }
         public int Quantity { get; set; }
         public DateTime? AvailabilityDate { get; set; }
     }
