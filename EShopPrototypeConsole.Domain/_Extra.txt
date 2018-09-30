@@ -4,3 +4,6 @@ Namespace best practices: Naming convention <company>.<technology>.<feature>
 More info on singleton and other patterns: 
 	https://app.pluralsight.com/library/courses/design-patterns-on-ramp/table-of-contents - begginer
 	https://app.pluralsight.com/library/courses/patterns-library/table-of-contents - intermediate
+
+Use StringBuilder when building a big string instead of concatenating strings together or using in a loop(Its more optimised since it 
+does not recreate strings) although it has a bigger overhead and it is a bad practice to use on single strings
