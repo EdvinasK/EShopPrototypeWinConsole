@@ -185,5 +185,45 @@ namespace EShopPrototypeConsole.DomainTests
             // Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void ProductCode_CorrectCodeFormat_Success()
+        {
+            // Arrange
+            var product = new Product(10m)
+            {
+                Code = 1
+            };
+
+            var expected = "-0001";
+
+            // Act
+            var actual = product.ProductCode;
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ProductCode_CorrectCodeFormatWithCategory_Success()
+        {
+            // Arrange
+            var product = new Product(10m)
+            {
+                Code = 1,
+                Category = new ProductCategory()
+                {
+                    Name = "Office goods"
+                }
+            };
+
+            var expected = "Office goods-0001";
+
+            // Act
+            var actual = product.ProductCode;
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

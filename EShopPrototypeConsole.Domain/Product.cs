@@ -51,6 +51,9 @@ namespace EShopPrototypeConsole.Domain
         public bool IsProductAvailable => ProductExtra.Quantity > 0;
 
         public string FullCode => Category.Name + Code.ToString();
+        public string ProductCode => String.Format("{0}-{1:0000}",
+                                                    Category?.Name,
+                                                    Code);
 
         /// <summary>
         /// Displays product name and cost
